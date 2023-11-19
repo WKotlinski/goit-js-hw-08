@@ -2,7 +2,7 @@ import throttle from 'lodash.throttle';
 const form = document.querySelector('.feedback-form');
 const email = document.querySelector('input[name="email"]');
 const msg = document.querySelector('textarea[name=message]');
-const timmer = 500;
+const timerValue = 500;
 
 const saveDate = function () {
   const values = {
@@ -29,6 +29,6 @@ const clearFun = function (event) {
   email.value = '';
   msg.value = '';
 };
-form.addEventListener('input', throttle(saveDate, timmer));
-form.addEventListener('submit', throttle(clearFun, timmer));
+form.addEventListener('input', throttle(saveDate, timerValue));
+form.addEventListener('submit', throttle(clearFun, timerValue));
 window.addEventListener('DOMContentLoaded', getValues);
